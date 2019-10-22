@@ -27,7 +27,7 @@ class Node:
 
     def __splay(self):
         while self.parent is not None:
-            if self.parent.left == self: # left child
+            if self.parent.left == self:  # left child
                 # our right child becomes left child of parent
                 self.right.parent = self.parent
                 self.parent.left = self.right
@@ -42,7 +42,7 @@ class Node:
                             parent_in_spe.left = self
                         else:
                             parent_in_spe.right = self
-                    if self.parent.parent.left == self.parent: 
+                    if self.parent.parent.left == self.parent:
                         # left zig-zig:  /
                         #               /
                         # right child of parent
@@ -52,7 +52,7 @@ class Node:
                         # grandparent becomes right child of parent
                         self.parent.parent.parent = self.parent
                         self.parent.right = self.parent.parent
-                    else:                         
+                    else:
                         # right-left zig-zag: \
                         #                     /
                         # our left child becomes right child of grandparent
@@ -66,7 +66,7 @@ class Node:
                 self.right = self.parent
                 # great-grandparent that we had to save becomes our parent
                 self.parent = parent_in_spe
-            else: # right child
+            else:  # right child
                 # our left child becomes right child of parent
                 self.left.parent = self.parent
                 self.parent.right = self.left
@@ -81,7 +81,7 @@ class Node:
                             parent_in_spe.left = self
                         else:
                             parent_in_spe.right = self
-                    if self.parent.parent.right == self.parent: 
+                    if self.parent.parent.right == self.parent:
                         # right zig-zig: \
                         #                 \
                         # left child of parent
@@ -91,7 +91,7 @@ class Node:
                         # grandparent becomes left child of parent
                         self.parent.parent.parent = self.parent
                         self.parent.left = self.parent.parent
-                    else:                         
+                    else:
                         # left-right zig-zag: /
                         #                     \
                         # our right child becomes left child of grandparent
