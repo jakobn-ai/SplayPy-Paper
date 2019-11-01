@@ -46,11 +46,11 @@ void splay(struct node* node, struct nodeStack* parentStack, struct boolStack* d
     if (isEmptyNode(parentStack) == TRUE) {
       // zig
       if (isLeftChild == TRUE) {
-        // left zig: /
+        /* left zig: / */
         parent->left = node->right;
         node->right = parent;
       } else {
-        // right zig: \
+        /* right zig: \ */
         parent->right = node->left;
         node->left = parent;
       }
