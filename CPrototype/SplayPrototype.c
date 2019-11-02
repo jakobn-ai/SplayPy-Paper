@@ -89,19 +89,16 @@ void splay(struct node* node, struct nodeStack* parentStack, struct boolStack* d
       }
     }
   }
-  free(parentStack);
-  free(directionStack);
 }
 
 struct node* insert(struct node* node, void* payload, enum order (*order)(void*, void*)) {
   struct nodeStack* parentStack = initNodeStack();
   struct boolStack* directionStack = initBoolStack();
   while (1) {
-    // break using return when inserted
     if (node->payload == NULL) {
       // empty tree
       node->payload = payload;
-      return node;
+      break;
     } else if ((*order)(payload, node->payload) == LESS) {
       if (node->left == NULL) {
         struct node* leaf = malloc(sizeof(struct node));
@@ -115,7 +112,8 @@ struct node* insert(struct node* node, void* payload, enum order (*order)(void*,
         pushBool(directionStack, TRUE);
         splay(leaf, parentStack, directionStack);
         // newly inserted node is new root after splay
-        return leaf;
+        node = leaf;
+        break;
       } else {
         // insert to the left recursively, child is left child
         pushNode(parentStack, node);
@@ -126,7 +124,7 @@ struct node* insert(struct node* node, void* payload, enum order (*order)(void*,
       // element is present (no double elements in sets), just splay up
       splay(node, parentStack, directionStack);
       // node is root after splay
-      return node;
+      break;
     } else {
       if (node->right == NULL) {
         struct node* leaf = malloc(sizeof(struct node));
@@ -138,7 +136,8 @@ struct node* insert(struct node* node, void* payload, enum order (*order)(void*,
         pushNode(parentStack, node);
         pushBool(directionStack, FALSE);
         splay(leaf, parentStack, directionStack);
-        return leaf;
+        node = leaf;
+        break;
       } else {
         // insert on right child recursively
         pushNode(parentStack, node);
@@ -147,5 +146,10 @@ struct node* insert(struct node* node, void* payload, enum order (*order)(void*,
       }
     }
   }
+  clearNodeStack(parentStack);
+  clearBoolStack(directionStack);
+  free(parentStack);
+  free(directionStack);
+  return node;
 }
 
