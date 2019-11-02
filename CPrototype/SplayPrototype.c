@@ -89,6 +89,8 @@ void splay(struct node* node, struct nodeStack* parentStack, struct boolStack* d
       }
     }
   }
+  free(parentStack);
+  free(directionStack);
 }
 
 struct node* insert(struct node* node, void* payload, enum order (*order)(void*, void*)) {
