@@ -20,13 +20,13 @@ void clearTree(struct node* node) {
 }
 
 // internal function that does not print a newline
-void showTreeRec(struct node* node, char* (*show)(void*)) {
+void showTreeRec(struct node* node, void (*show)(void*)) {
   if (node == NULL || node->payload == NULL)
     printf("NULL");
   else {
-    char* showStr = (*show)(node->payload);
-    printf("(%s, ", showStr);
-    free(showStr);
+    printf("(");
+    (*show)(node->payload);
+    printf(", ");
     showTreeRec(node->left, show);
     printf(", ");
     showTreeRec(node->right, show);
@@ -34,7 +34,7 @@ void showTreeRec(struct node* node, char* (*show)(void*)) {
   }
 }
 
-void showTree(struct node* node, char* (*show)(void*)) {
+void showTree(struct node* node, void (*show)(void*)) {
   showTreeRec(node, show);
   printf("\n");
 }

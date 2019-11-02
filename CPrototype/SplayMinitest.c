@@ -9,13 +9,9 @@
 
 // length of test array
 #define LENGTH 10000
-// maximum 4294967296 + nullterm
-#define INT_DIGITS 11
 
-char* showInt(void* a) {
-  char* intStr = malloc(INT_DIGITS * sizeof(char));
-  sprintf(intStr, "%d", *(int*) a);
-  return intStr;
+void showInt(void* a) {
+  printf("%d", *(int*) a);
 }
 
 enum order orderInts(void* a, void* b) {
