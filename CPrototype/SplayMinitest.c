@@ -8,7 +8,7 @@
 #include "SplayPrototype.h"
 
 // length of test array
-#define LENGTH 10000
+#define LENGTH 100000
 
 void showInt(void* a) {
   printf("%d", *(int*) a);
