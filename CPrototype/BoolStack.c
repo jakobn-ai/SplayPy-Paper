@@ -16,6 +16,10 @@ struct boolStack* initBoolStack() {
   // ensure pushing char upon initial push
   stack->frameIdx = SLOTS;
   stack->payload = malloc(0);
+  if (stack->payload == NULL) {
+    fprintf(stderr, "Alloc of empty boolStack array failed");
+    exit(1);
+  }
   return stack;
 }
 

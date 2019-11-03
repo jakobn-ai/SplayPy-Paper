@@ -22,6 +22,10 @@ int main(int argc, char** argv) {
   srand(time(NULL));
 
   int* myArray = malloc(LENGTH * sizeof(int));
+  if (myArray == NULL) {
+    fprintf(stderr, "Alloc of test array failed");
+    exit(1);
+  }
   for (int i = 0; i < LENGTH; i++)
     myArray[i] = i;
   // Fisher-Yates shuffle

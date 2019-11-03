@@ -7,6 +7,10 @@
 
 struct node* initTree() {
   struct node* node = malloc(sizeof(struct node));
+  if (node == NULL) {
+    fprintf(stderr, "Alloc of empty tree failed");
+    exit(1);
+  }
   node->payload = NULL;
   node->left = NULL;
   node->right = NULL;
@@ -102,6 +106,10 @@ struct node* insert(struct node* node, void* payload, enum order (*order)(void*,
     } else if ((*order)(payload, node->payload) == LESS) {
       if (node->left == NULL) {
         struct node* leaf = malloc(sizeof(struct node));
+        if (leaf == NULL) {
+          fprintf(stderr, "Alloc of leaf to the left failed");
+          exit(1);
+        }
         leaf->payload = payload;
         leaf->left = NULL;
         leaf->right = NULL;
@@ -128,6 +136,10 @@ struct node* insert(struct node* node, void* payload, enum order (*order)(void*,
     } else {
       if (node->right == NULL) {
         struct node* leaf = malloc(sizeof(struct node));
+        if (leaf == NULL) {
+          fprintf(stderr, "Alloc of leaf to the right failed");
+          exit(1);
+        }
         leaf->payload = payload;
         leaf->left = NULL;
         leaf->right = NULL;

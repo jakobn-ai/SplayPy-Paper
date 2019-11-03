@@ -12,6 +12,10 @@ struct nodeStack* initNodeStack() {
   }
   stack->height = -1;
   stack->node = malloc(0);
+  if (stack->node == NULL) {
+    fprintf(stderr, "Alloc of empty nodeStack array failed");
+    exit(1);
+  }
   return stack;
 }
 
