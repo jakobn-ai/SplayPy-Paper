@@ -21,7 +21,7 @@ enum order orderInts(void* a, void* b) {
 int main(int argc, char** argv) {
   srand(time(NULL));
 
-  int myArray[LENGTH];
+  int* myArray = malloc(LENGTH * sizeof(int));
   for (int i = 0; i < LENGTH; i++)
     myArray[i] = i;
   // Fisher-Yates shuffle
@@ -40,5 +40,6 @@ int main(int argc, char** argv) {
 
   // showTree(mySplay, &showInt);
   clearTree(mySplay);
+  free(myArray);
 }
 
