@@ -1,4 +1,5 @@
 # cython: language_level=3
+import graphviz, random
 
 cdef class Node:
     cdef object payload
@@ -24,6 +25,22 @@ cdef class Node:
             else:
                 output_str += f"{self.right.show()})"
             return output_str
+
+    def graph(self, dot, used):
+        used.add(id(self))
+        dot.node(str(id(self)), label=str(self.payload))
+        for node in self.left, self.right:
+            if node is not None:
+                dot.edge(str(id(self)), str(id(node)))
+                used = node.graph(dot, used)
+            else:
+                key = 0
+                while key in used:
+                    key = random.randrange(10**9)
+                used.add(key)
+                dot.node(str(key), shape="point")
+                dot.edge(str(id(self)), str(key))
+        return used
 
     cpdef Node insert(self, object payload):
         parent_stack = []
@@ -126,6 +143,11 @@ class SplayTree:
 
     def show(self):
         return self.tree.show()
+
+    def graph(self):
+        dot = graphviz.Digraph()
+        self.tree.graph(dot, set())
+        return dot
 
     def insert(self, payload):
         self.tree = self.tree.insert(payload)
