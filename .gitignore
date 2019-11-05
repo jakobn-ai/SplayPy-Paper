@@ -1,4 +1,6 @@
 *.swp
 *.o
 *.o.dSYM
+*.so
+PythonPrototype/*.c
 __pycache__
