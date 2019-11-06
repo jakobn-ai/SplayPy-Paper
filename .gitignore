@@ -3,4 +3,6 @@
 *.o.dSYM
 *.so
 PythonPrototype/*.c
+PythonPrototype/*.dot*
+CPrototype/*.py
 __pycache__
