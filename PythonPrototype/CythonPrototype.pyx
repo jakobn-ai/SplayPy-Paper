@@ -1,5 +1,7 @@
 # cython: language_level=3
-import graphviz, random
+
+from graphviz import Digraph
+from random import randrange
 
 cdef class Node:
     cdef object payload
@@ -36,7 +38,7 @@ cdef class Node:
             else:
                 key = 0
                 while key in used:
-                    key = random.randrange(10**9)
+                    key = randrange(10**9)
                 used.add(key)
                 dot.node(str(key), shape="point")
                 dot.edge(str(id(self)), str(key))
@@ -145,7 +147,7 @@ class SplayTree:
         return self.tree.show()
 
     def graph(self):
-        dot = graphviz.Digraph()
+        dot = Digraph()
         self.tree.graph(dot, set())
         return dot
 
