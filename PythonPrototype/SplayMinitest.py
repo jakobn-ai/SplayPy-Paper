@@ -1,5 +1,5 @@
 from random import shuffle
-from StackSplayItPrototype import SplayTree
+from CythonPrototype import SplayTree
 my_splay = SplayTree()
 my_list = list(range(10**5))
 shuffle(my_list)
