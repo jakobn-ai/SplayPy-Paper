@@ -5,4 +5,5 @@
 PythonPrototype/*.c
 PythonPrototype/*.dot*
 CPrototype/*.py
+.ipynb_checkpoints
 __pycache__
