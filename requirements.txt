@@ -1,1 +1,2 @@
 graphviz>=0.13 # MIT
+jupyter>=1.0.0 # 3-Clause BSD
