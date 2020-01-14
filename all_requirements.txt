@@ -1,3 +1,4 @@
 flake8>=3.7.9 # MIT
-python-graphviz>=0.13 # MIT
+graphviz>=0.13 # MIT
 jupyter>=1.0.0 # 3-Clause BSD
+pycodestyle-magic>=0.5 # MIT

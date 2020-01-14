@@ -1,0 +1,1 @@
+pycodestyle-magic>=0.5 # MIT
