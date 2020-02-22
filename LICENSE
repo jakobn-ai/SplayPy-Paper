@@ -4,7 +4,7 @@ Copyright for files in "Aux/" (c) 2014-19 Karl Stroetmann
 Regarding the annotations in all notebooks except those in "Aux/":
 All rights reserved.
 
-Regarding everything else except Performance.ipynb and Aux/Set.ipynb:
+Regarding everything else except Performance.ipynb and Aux/{Set,HashMap}.ipynb:
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
