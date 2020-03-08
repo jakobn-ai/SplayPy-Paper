@@ -8,4 +8,6 @@ For setup under Conda, run `conda install --file requirements.txt` and `pip inst
 
 For setup under a normal `pip` environment, run `pip install -r all_requirements.txt` (or `pip3` if applicable).
 
+Regardless of Conda or regular `pip`, [Graphviz](http://graphviz.org/) will need to be installed.
+
 Run `jupyter notebook` to open the notebook.
