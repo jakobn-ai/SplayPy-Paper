@@ -23,7 +23,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Regarding the implementation in Performance.ipynb:
+Regarding Aux/{Set,HashMap}.ipynb and the implementation in Performance.ipynb:
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
