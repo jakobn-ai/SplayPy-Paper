@@ -1,3 +1,4 @@
+cython>=0.29.15 # Apache-2.0
 flake8>=3.7.9 # MIT
-python-graphviz>=0.13 # MIT
+python-graphviz>=0.13.2 # MIT
 jupyter>=1.0.0 # 3-Clause BSD
