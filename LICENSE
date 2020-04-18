@@ -5,7 +5,7 @@ Copyright for test_OrderedSet.py (c) 2003-19 Raymond Hettinger et al., (c) 2020 
 Regarding the annotations in all notebooks except those in "Aux/":
 All rights reserved.
 
-Regarding everything else except Performance.ipynb and Aux/{Set,HashMap}.ipynb:
+Regarding everything else except 5-Performance.ipynb and Aux/{Set,HashMap}.ipynb:
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -74,7 +74,7 @@ products or services of Licensee, or any third party.
 agrees to be bound by the terms and conditions of this License
 Agreement.
 
-Regarding Aux/{Set,HashMap}.ipynb and the implementation in Performance.ipynb:
+Regarding Aux/{Set,HashMap}.ipynb and the implementation in 5-Performance.ipynb:
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
